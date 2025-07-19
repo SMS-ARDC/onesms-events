@@ -36,6 +36,48 @@
 	  padding: 0;
 	  gap: 2rem;
 	}
+	  /* hide toggle on desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.nav-toggle span {
+  display: block;
+  height: 3px;
+  background: #0000ff;
+  border-radius: 2px;
+}
+
+/* mobile styles */
+@media (max-width: 768px) {
+  /* show burger */
+  .nav-toggle {
+    display: flex;
+  }
+  /* hide menu */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(255,255,255,0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1rem 2rem;
+  }
+  /* when nav.active, show menu */
+  nav.active ul {
+    display: flex;
+  }
+}
     nav li {
       margin: 0 1rem;
     }
@@ -180,6 +222,13 @@
 	}
   </style>
 </head>
+<script>
+  const nav = document.querySelector('nav');
+  const toggle = document.querySelector('.nav-toggle');
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
 <body>
 
   <!-- Navigation -->
@@ -187,6 +236,12 @@
    <a href="#hero" class="logo-link">
      <img src="logo.png" alt="Sisters of Mary Schools logo" class="logo">
    </a>
+	<!-- burger toggle -->
+  	<button class="nav-toggle" aria-label="Toggle menu">
+   	<span></span>
+    	<span></span>
+    	<span></span>
+  </button>
    <ul>
      <li><a href="#hero">Home</a></li>
      <li><a href="#about">About</a></li>

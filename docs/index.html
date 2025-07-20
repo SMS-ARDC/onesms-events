@@ -1,350 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>40 Years of Grace | Benefit Concert</title>
-  <link rel="icon" href="favicon.png" type="image/x-icon" />
-  <style>
-    body {
-      margin: 0;
-      font-family:
-        -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, sans-serif;
-      color: #333;
-      line-height: 1.4;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>40 Years of Grace</title>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Open Sans', sans-serif;
+        scroll-behavior: smooth;
     }
-	nav {
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  gap: 2rem;
-	  position: fixed;
-	  top: 0;
-	  width: 100%;
-	  padding: 0.75rem 2rem;
-	  background: rgba(255,255,255,0.9);
-	  backdrop-filter: blur(4px);
-	  z-index: 10;
-	}
 
-	nav ul {
-	  display: flex;
-	  list-style: none;
-	  margin: 0;
-	  padding: 0;
-	  gap: 2rem;
-	}
-	  /* hide toggle on desktop */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-.nav-toggle span {
-  display: block;
-  height: 3px;
-  background: #0000ff;
-  border-radius: 2px;
-}
-
-/* mobile styles */
-@media (max-width: 768px) {
-  /* show burger */
-  .nav-toggle {
-    display: flex;
-  }
-  /* hide menu */
-  nav ul {
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-    background: rgba(255,255,255,0.95);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    padding: 1rem 2rem;
-  }
-  /* when nav.active, show menu */
-  nav.active ul {
-    display: flex;
-  }
-}
-    nav li {
-      margin: 0 1rem;
+    .hero {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #0044cc;
+        padding: 0 20px;
     }
-	nav a {
-	  display: inline-block;
-	  padding: 0.5rem 1rem;
-	  border-radius: 4px;
-	  color: #0000ff;
-	  text-decoration: none;
-	  font-weight: 500;
-	  transition: background-color 0.3s ease, color 0.3s ease;
-	}
 
-	/* only menu items, not the logo */
-	nav ul a:hover {
-	  background-color: #0000ff;
-	  color: #fff;
-	}
+    .hero::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('sms.png') center/cover no-repeat;
+        filter: blur(3px) opacity(0.3);
+        z-index: -1;
+    }
+
+    .logo {
+        width: 150px;
+        max-width: 25%;
+        margin-bottom: 25px;
+    }
+
+    .hero h1.headline {
+        font-family: 'Parisienne', cursive;
+        font-size: 3.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .countdown {
+        display: flex;
+        gap: 20px;
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+    }
+
+    .countdown > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .countdown > div > div:first-child {
+        background: rgba(255,255,255,0.9);
+        padding: 15px 20px;
+        border-radius: 6px;
+        min-width: 80px;
+        font-size: 2.5rem;
+    }
+
+    .countdown div .label {
+        font-size: 1rem;
+        font-weight: normal;
+        margin-top: 5px;
+    }
+
+    .hero button {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+        background-color: #0044cc;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
     section {
-      padding: 4rem 2rem;
-      max-width: 800px;
-      margin: 0 auto;
+        padding: 40px 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
     }
-    h2 {
-      color: #0000ff;
-      font-size: 2rem;
-      margin-bottom: 1rem;
+
+    section h2 {
+        color: #0044cc;
+        margin-bottom: 15px;
     }
-    .performers,
+
     .program {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+        display: grid;
+        gap: 10px;
     }
-    .ticket-pricing {
-      text-align: center;
+
+    .program div {
+        padding: 5px 0;
     }
-    .ticket-pricing div {
-      margin: 1rem 0;
+
+    .cta {
+        text-align: center;
+        margin-top: 20px;
     }
-    .faq dt {
-      font-weight: 600;
-      margin-top: 1rem;
+
+    .cta p {
+        max-width: 600px;
+        margin: 10px auto;
+        font-size: 1rem;
     }
-    .faq dd {
-      margin: 0.5rem 0 0 0;
+
+    .cta-button {
+        display: inline-block;
+        margin: 10px 0 20px 0;
+        padding: 12px 24px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #fff;
+        background-color: #0044cc;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.2s ease-in-out;
     }
+
+    .cta-button:hover {
+        background-color: #0033aa;
+    }
+
     footer {
-      text-align: center;
-      padding: 2rem;
-      background: #f4f4f4;
-      color: #666;/*this is the last part*/
+        text-align: center;
+        padding: 20px;
+        font-size: 0.875rem;
+        color: #666;
     }
-	.hero {
-	  position: relative;
-	  overflow: hidden;
-	  padding: 4rem 0;    /* give some breathing room */
-	}
 
-	.hero::before {
-	  content: "";
-	  position: absolute;
-	  inset: 0;
-	  background: url('images/bg.jpg') center/cover no-repeat;
-	  filter: blur(8px);
-	  transform: scale(1.05);
-	  z-index: 0;
-	}
+    @media (max-width: 600px) {
+        .hero::before {
+            filter: blur(1.5px) opacity(0.3);
+        }
 
-	.hero::after {
-	  content: "";
-	  position: absolute;
-	  inset: 0;
-	  background: #fff;
-	  opacity: 0.4;
-	  z-index: 1;
-	}
+        .logo {
+            width: 100px;
+            margin-bottom: 15px;
+        }
 
-	.hero-content {
-	  position: relative;
-	  z-index: 2;
-	  display: flex;
-	  flex-direction: column;
-	  align-items: center;
-	  text-align: center;
-	  padding: 2rem;
-	  color: #0000ff;
-	  max-width: 600px;   /* or whatever feels right */
-	  margin: 0 auto;     /* center it */
-	}
+        .hero h1.headline {
+            font-size: 2.5rem;
+        }
 
-	.hero h1 {
-	  margin: 0 0 0.5rem;
-	  font-size: 3rem;
-	  font-weight: 700;
-	}
-	.hero p {
-	  margin: 0 0 1.5rem;
-	  font-size: 1.25rem;
-	  font-weight: 500;
-	}
+        .hero p {
+            font-size: 1rem;
+        }
 
-	#countdown {
-	  margin: 2rem 0;
-	  font-size: 4rem;
-	  font-weight: 700;
-	  text-align: center;
-	  opacity: 0;
-	  animation: fadeIn 1s ease-in-out forwards;
-	  animation-delay: 0.5s;
-	}
+        .countdown {
+            font-size: 2rem;
+        }
 
-	@keyframes fadeIn {
-	  from { opacity: 0; }
-	  to   { opacity: 1; }
-	}
-	
-	.btn {
-	  display: inline-block;
-	  background-color: #0000ff;
-	  color: #fff;
-	  padding: 0.75rem 1.5rem;
-	  border: none;
-	  border-radius: 4px;
-	  font-size: 1rem;
-	  cursor: pointer;
-	  text-decoration: none;    /* remove the underline */
-	  margin-top: 1rem;         /* space above the button */
-	}
-	.btn:hover {
-	  filter: brightness(1.1);
-	}
-	
-	.logo-link {
-	  display: inline-block;
-	  margin-right: 1rem;
-	}
-	.logo {
-	  height: 40px;
-	  width: auto;
-	  vertical-align: middle;
-	}
-  </style>
+        .countdown > div > div:first-child {
+            min-width: 60px;
+            font-size: 1.5rem;
+            padding: 10px 12px;
+        }
+
+        .countdown div .label {
+            font-size: 0.875rem;
+        }
+    }
+</style>
 </head>
-<script>
-  const nav = document.querySelector('nav');
-  const toggle = document.querySelector('.nav-toggle');
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-</script>
 <body>
 
-  <!-- Navigation -->
- <nav>
-   <a href="#hero" class="logo-link">
-     <img src="logo.png" alt="Sisters of Mary Schools logo" class="logo">
-   </a>
-	<!-- burger toggle -->
-  <button class="nav-toggle" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-
-  <!-- full-screen overlay -->
-  <div class="nav-overlay">
-    <button class="nav-close" aria-label="Close menu">&times;</button>
-    <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#program">Program</a></li>
-      <li><a href="#faq">FAQs</a></li>
-    </ul>
-  </div>
-</nav>
-
-  <!-- Hero -->
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <h1>40 Years of Grace</h1>
-      <p>Benefit Concert • August 10, 2025 • 1 PM</p>
-	<div id="countdown">Loading…</div>
-	<a
-	  class="btn"
-	  href="https://forms.office.com/your-form-id"
-	  target="_blank"
-	  rel="noopener"
-	>
-	  Reserve Your Seat
-	</a>
+<div class="hero">
+    <img src="logo.png" alt="Logo" class="logo">
+    <h1 class="headline">40 Years of Grace</h1>
+    <p>Benefit Concert · August 10, 2025 · 1 PM</p>
+    <div class="countdown" id="countdown">
+        <div>
+            <div id="days">00</div>
+            <div class="label">Days</div>
+        </div>
+        <div>
+            <div id="hours">00</div>
+            <div class="label">Hours</div>
+        </div>
+        <div>
+            <div id="minutes">00</div>
+            <div class="label">Minutes</div>
+        </div>
+        <div>
+            <div id="seconds">00</div>
+            <div class="label">Seconds</div>
+        </div>
     </div>
-  </section>
+    <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+</div>
 
-  <!-- About -->
-  <section id="about">
+<section id="about">
     <h2>About the Anniversary</h2>
-    <p>
-      Sisters of Mary founded in 1964. First Philippine campus opened in 1985.
-      We celebrate 40 years of service to children through education and care.
-    </p>
-  </section>
+    <p>Sisters of Mary has been nurturing and empowering children since 1964. The first Philippine campus opened in 1985, beginning a mission of hope, care, and education for the underprivileged. This benefit concert celebrates 40 years of transforming lives through your support and generosity.</p>
+</section>
 
-
-
-  <!-- Program -->
-  <section id="program">
+<section>
     <h2>Program Highlights</h2>
     <div class="program">
-      <div>
-        <strong>Folk Dances of Luzon</strong>
-        <p>Traditional routines by senior students.</p>
-      </div>
-      <div>
-        <strong>Choir & Jasmine Dance</strong>
-        <p>Choir sings classics as dancers perform.</p>
-      </div>
-      <div>
-        <strong>Regional Folk Segments</strong>
-        <p>Visayas panderetas and Mindanao singkil.</p>
-      </div>
-      <div>
-        <strong>Alumni Tribute</strong>
-        <p>Video message and live song.</p>
-      </div>
+        <div>Folk Dances of Luzon: Traditional routines by senior students.</div>
+        <div>Choir & Jasmine Dance: Choir sings classics as dancers perform.</div>
+        <div>Regional Folk Segments: Visayas pandereatas and Mindanao singkil.</div>
+        <div>Alumni Tribute: Video message and live song.</div>
     </div>
-  </section>
+</section>
 
+<section>
+    <h2>Get Involved</h2>
+    <p>Be part of this milestone celebration. Choose how you would like to join us:</p>
 
-  <!-- FAQ -->
-  <section id="faq">
-    <h2>FAQs</h2>
-    <dl class="faq">
-      <dt>Will I receive a printed ticket?</dt>
-      <dd>Yes. We will email a PDF you can print or show on phone.</dd>
-      <dt>Can I change my seat later?</dt>
-      <dd>Please contact tickets@onesms.org for seat changes.</dd>
-      <dt>How can I support if I cannot attend?</dt>
-      <dd>You may donate via the form or contact us for bank details.</dd>
-    </dl>
-  </section>
+    <div class="cta">
+        <p>For benefactors, businesses, and organizations who wish to support this event as sponsors or partners:</p>
+        <a href="https://forms.office.com/become-a-sponsor-link" class="cta-button">
+            Become a Sponsor
+        </a>
+		
+        <p>For alumni, friends, and guests who would like to watch the benefit concert live or via streaming:</p>
+        <a href="https://forms.office.com/reserve-your-seats-link" class="cta-button">
+            Reserve Your Seats
+        </a>
+        
+    </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>Contact: tickets@onesms.org</p>
-    <p>&copy; Sisters of Mary Schools Philippines • 2025</p>
-  </footer>
+<footer>
+    Contact: tickets@onesms.org<br>
+    © Sisters of Mary Schools Philippines - 2025
+</footer>
 
-  <!-- Countdown Script (same as before) -->
-  <script>
-    const target = new Date('August 10, 2025 13:00:00').getTime();
-    const el = document.getElementById('countdown');
-    function updateTimer() {
-      const now = Date.now();
-      const diff = target - now;
-      if (diff <= 0) {
-        el.textContent = 'See you at the show!';
-        clearInterval(timer);
-        return;
-      }
-      const days  = Math.floor(diff / (1e3 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1e3 * 60 * 60)) % 24);
-      const mins  = Math.floor((diff / (1e3 * 60)) % 60);
-      const secs  = Math.floor((diff / 1e3) % 60);
-      el.textContent = `${days}d ${hours}h ${mins}m ${secs}s`;
-    }
-    updateTimer();
-    const timer = setInterval(updateTimer, 1000);
-  </script>
+<script>
+    const countdown = () => {
+        const endDate = new Date("August 10, 2025 13:00:00").getTime();
+        const now = new Date().getTime();
+        const diff = endDate - now;
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = d < 10 ? '0' + d : d;
+        document.getElementById("hours").innerText = h < 10 ? '0' + h : h;
+        document.getElementById("minutes").innerText = m < 10 ? '0' + m : m;
+        document.getElementById("seconds").innerText = s < 10 ? '0' + s : s;
+    };
+
+    setInterval(countdown, 1000);
+</script>
 
 </body>
 </html>

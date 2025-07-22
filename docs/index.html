@@ -69,7 +69,7 @@
         align-items: center;
     }
 
-    .countdown > div > div:first-child {
+	.countdown > div > div:first-child {
 	    background: rgba(255, 255, 255, 0.15);
 	    backdrop-filter: blur(8px);
 	    -webkit-backdrop-filter: blur(8px);
@@ -183,6 +183,20 @@
         .countdown div .label {
             font-size: 0.875rem;
         }
+		
+		section#benefit-show {
+		    display: flex;
+		    justify-content: center;
+		    padding: 20px 0;
+		}
+		
+		.responsive-banner {
+		    display: block;
+		    margin: 0 auto;
+		    width: 100%;
+		    max-width: 1200px;
+		    height: auto;
+		}
     }
 </style>
 </head>
@@ -210,22 +224,11 @@
             <div class="label">Seconds</div>
         </div>
     </div>
-    <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+	<button onclick="document.getElementById('benefit-show').scrollIntoView({behavior: 'smooth'})">Learn More</button>
 </div>
 
-<section id="about">
-    <h2>About the Benefit Concert Show</h2>
-    <p>Sisters of Mary has been nurturing and empowering children since 1964. The first Philippine campus opened in 1985, beginning a mission of hope, care, and education for the underprivileged. This benefit concert celebrates 40 years of transforming lives through your support and generosity.</p>
-</section>
-
-<section>
-    <h2>Program Highlights</h2>
-    <div class="program">
-        <div><strong>Folk Dances of Luzon</strong>: Senior students showcase timeless traditional routines from Luzon.</div>
-        <div><strong>Choir & Jasmine Dance</strong>: The choir performs beloved classics as dancers bring stories to life through graceful movements.</div>
-        <div><strong>Regional Folk Segments</strong>: Vibrant performances featuring Visayan pandereatas and the iconic Mindanao singkil.</div>
-        <div><strong>Alumni Tribute</strong>: A heartfelt video message and live performance from our alumni community.</div>
-    </div>
+<section id="benefit-show">
+    <img src="benefit-show-banner.png" alt="About the Benefit Show and Program Highlights" class="responsive-banner">
 </section>
 
 <section>
@@ -247,8 +250,8 @@
 </section>
 
 <footer>
-    Contact: info@sms40years.org<br>
-    © 2025 Sisters of Mary Schools Philippines
+    Contact: tickets@onesms.org<br>
+    © Sisters of Mary Schools Philippines - 2025
 </footer>
 
 <script>

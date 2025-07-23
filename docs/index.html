@@ -7,170 +7,183 @@
 <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
-    body, html {
-        margin: 0;
-        padding: 0;
-        font-family: 'Open Sans', sans-serif;
-        scroll-behavior: smooth;
-    }
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+}
 
-    .hero {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: #0044cc;
-        padding: 0 20px;
-        position: relative;
-    }
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #0044cc;
+    padding: 0 20px;
+    position: relative;
+}
 
-    .hero::before {
-        content: "";
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('sms.png') center/cover no-repeat;
-        filter: blur(3px) opacity(0.3);
-        z-index: -1;
-    }
+.hero::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('sms.png') center/cover no-repeat;
+    filter: blur(3px) opacity(0.3);
+    z-index: -1;
+}
 
-    .logo {
+.logo {
     width: auto;
     max-width: 200px;
     height: auto;
     margin-bottom: 20px;
-    }
+}
 
-      #get-involved h2 {
+#get-involved h2 {
     color: #0044cc;
-    }
+}
 
+.hero h1.headline {
+    font-family: 'Parisienne', cursive;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.countdown {
+    display: flex;
+    gap: 30px;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.countdown > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown > div > div:first-child {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 15px;
+    border-radius: 8px;
+    min-width: 80px;
+    font-size: 3.5rem;
+}
+
+.countdown div .label {
+    font-size: 1.2rem;
+    margin-top: 8px;
+}
+
+.hero button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    background-color: #0044cc;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.hero button:hover {
+    background-color: #0033aa;
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.section-divider {
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.05), transparent);
+}
+
+#benefit-show {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.responsive-banner {
+    max-width: 1200px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cta p {
+    max-width: 600px;
+    margin: 10px auto;
+    font-size: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    margin: 10px 0 20px 0;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0044cc;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #0033aa;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+@media (max-width: 600px) {
     .hero h1.headline {
-        font-family: 'Parisienne', cursive;
-        font-size: 3rem;
-        margin-bottom: 10px;
+        font-size: 2.2rem;
     }
 
     .hero p {
-        font-size: 1rem;
-        margin-bottom: 20px;
+        font-size: 0.9rem;
     }
 
     .countdown {
-        display: flex;
-        gap: 30px;
-        font-size: 3rem;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-
-    .countdown > div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        font-size: 1.2rem;
     }
 
     .countdown > div > div:first-child {
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        padding: 10px 15px;
-        border-radius: 8px;
-        min-width: 80px;
-        font-size: 3.5rem;
+        min-width: 50px;
+        font-size: 1.5rem;
+        padding: 8px 10px;
     }
-
-    .countdown div .label {
-        font-size: 1.2rem;
-        margin-top: 8px;
-    }
-
-    .hero button {
-        padding: 12px 25px;
-        font-size: 1rem;
-        background-color: #0044cc;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        border-radius: 4px;
-    }
-
-    section {
-        padding: 40px 20px;
-        text-align: center;
-    }
-
-    #benefit-show {
-        text-align: center;
-        padding: 20px 0;
-    }
-
-    .responsive-banner {
-        max-width: 1200px;
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .cta {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .cta p {
-        max-width: 600px;
-        margin: 10px auto;
-        font-size: 1rem;
-    }
-
-    .cta-button {
-        display: inline-block;
-        margin: 10px 0 20px 0;
-        padding: 12px 24px;
-        font-size: 1.1rem;
-        font-weight: bold;
-        color: #fff;
-        background-color: #0044cc;
-        text-decoration: none;
-        border-radius: 4px;
-        transition: background-color 0.2s ease-in-out;
-    }
-
-    .cta-button:hover {
-        background-color: #0033aa;
-    }
-
-    footer {
-        text-align: center;
-        padding: 20px;
-        font-size: 0.875rem;
-        color: #666;
-    }
-
-    @media (max-width: 600px) {
-        .hero h1.headline {
-            font-size: 2.2rem;
-        }
-
-        .hero p {
-            font-size: 0.9rem;
-        }
-
-        .countdown {
-            font-size: 1.2rem;
-        }
-
-        .countdown > div > div:first-child {
-            min-width: 50px;
-            font-size: 1.5rem;
-            padding: 8px 10px;
-        }
-    }
+}
 </style>
 </head>
 <body>
@@ -200,18 +213,14 @@
     <button onclick="document.getElementById('benefit-show').scrollIntoView({behavior: 'smooth'})">Learn More</button>
 </div>
 
+<div class="section-divider"></div>
+
 <section id="benefit-show">
     <picture>
-        <source 
-            srcset="banner-mobile-updated.png" 
-            media="(max-width: 767px)">
-        <img 
-            src="banner-desktop-updated.png" 
-            alt="About the Benefit Show and Program Highlights" 
-            class="responsive-banner">
+        <source srcset="banner-mobile-updated.png" media="(max-width: 767px)">
+        <img src="banner-desktop-updated.png" alt="About the Benefit Show and Program Highlights" class="responsive-banner">
     </picture>
 </section>
-
 
 <section id="get-involved">
     <h2>Get Involved</h2>
@@ -236,23 +245,23 @@
 </footer>
 
 <script>
-    const countdown = () => {
-        const endDate = new Date("August 10, 2025 13:00:00").getTime();
-        const now = new Date().getTime();
-        const diff = endDate - now;
+const countdown = () => {
+    const endDate = new Date("August 10, 2025 13:00:00").getTime();
+    const now = new Date().getTime();
+    const diff = endDate - now;
 
-        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((diff % (1000 * 60)) / 1000);
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
 
-        document.getElementById("days").innerText = d < 10 ? '0' + d : d;
-        document.getElementById("hours").innerText = h < 10 ? '0' + h : h;
-        document.getElementById("minutes").innerText = m < 10 ? '0' + m : m;
-        document.getElementById("seconds").innerText = s < 10 ? '0' + s : s;
-    };
+    document.getElementById("days").innerText = d < 10 ? '0' + d : d;
+    document.getElementById("hours").innerText = h < 10 ? '0' + h : h;
+    document.getElementById("minutes").innerText = m < 10 ? '0' + m : m;
+    document.getElementById("seconds").innerText = s < 10 ? '0' + s : s;
+};
 
-    setInterval(countdown, 1000);
+setInterval(countdown, 1000);
 </script>
 
 </body>
